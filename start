@@ -1,4 +1,7 @@
 #!/bin/bash
-export PGDATA=$HOME/pgsql/data
-pg_ctl start -l pglog
+# creting dynamicaly the notebook
+
+# adding content to notebook
+python build_notebook.py
+
 exec "$@"
