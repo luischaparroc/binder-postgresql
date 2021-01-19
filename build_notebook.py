@@ -16,7 +16,7 @@ class DynamicNotebook:
 
     def __init__(self, params):
         try:
-            with open(self.params) as file:
+            with open(params) as file:
                 parameters = json.load(file)
             self.area = parameters['area']
             self.db = parameters['DB']
