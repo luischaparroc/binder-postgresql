@@ -4,7 +4,7 @@
   "questions": [
     {
       "type": "Programming",
-      "q_level":{"Basic": 1,
+      "q_level":{"Basic": 2,
            "Intermediate": 3,
            "Advanced": 0}
     },

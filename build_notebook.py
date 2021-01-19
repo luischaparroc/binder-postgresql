@@ -98,10 +98,9 @@ class DynamicNotebook:
         A method for create the jupyter notebook with random questions.
         """
         try:
-            # area, db, questions, path_notebook = self.__read_params()
             df_questions = self.__read_questions()
             cell_array = []
-            df_questions = df_questions[df_questions['Desc_test'] == area]
+            df_questions = df_questions[df_questions['Desc_test'] == self.area]
 
             # Load greet
             cell_array.append({"cell_type": "markdown", "metadata": {},
@@ -110,7 +109,7 @@ class DynamicNotebook:
                 cell_array.append({"cell_type": "code", "execution_count": None, "metadata": {}, "outputs": [],
                               "source": [str(df_questions.load_script.unique()).replace("['", '').replace("']", '')]})
             # Load cells with random questions
-            for q_list in questions:
+            for q_list in self.questions:
                 q_type = q_list["type"]
                 q_level = dict(q_list["q_level"])
                 for k, v in q_level.items():
@@ -130,12 +129,13 @@ class DynamicNotebook:
                                 })
             cells.update(metadata)
             # Create file Jupyter notebook for test
-            notebook = open(path_notebook, 'w')
+            notebook = open(self.path_notebook, 'w')
             notebook.write(json.dumps(cells))
             notebook.close()
 
         except Exception as e:
-            print('An error has occurred when notebook was been created: ', e)
+            print('An error has occurred during notebook creation: ', e)
+            raise e
 
 if __name__ == '__main__':
     file_test = DynamicNotebook('./params.json')
