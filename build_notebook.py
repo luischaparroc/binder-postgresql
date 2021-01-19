@@ -103,7 +103,9 @@ class DynamicNotebook:
             df_questions = self.__read_questions()
             cell_array = []
             df_questions = df_questions[df_questions['Desc_test'] == self.area]
-
+            print('df_questions:', df_questions)
+            print('Desc_test:', df_questions['Desc_test'])
+            print('area:', self.area)
             # Load greet
             cell_array.append({"cell_type": "markdown", "metadata": {},
                                "source": [str(df_questions.Subject.unique()).replace("['", '').replace("']", '')]})
@@ -112,11 +114,16 @@ class DynamicNotebook:
                                    "source": [
                                        str(df_questions.load_script.unique()).replace("['", '').replace("']", '')]})
             # Load cells with random questions
+            print('df_questions', df_questions, sep='\n')
             for q_list in self.questions:
                 q_type = q_list["type"]
                 q_level = dict(q_list["q_level"])
+                print('q_level:', q_level)
                 for k, v in q_level.items():
-                    cell_array.extend(self.__random_questions(df_questions, q_type, k, v))
+                    rand_questions = self.__random_questions(df_questions, q_type, k, v)
+                    print('k:', k, 'v:', v, 'q_type:', q_type)
+                    print('rand_questions:', rand_questions, sep='\n')
+                    cell_array.extend(rand_questions)
 
             cells = dict({"cells": cell_array})
             # Create Metadata for Jupyter notebook

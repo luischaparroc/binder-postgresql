@@ -1,11 +1,11 @@
 {
-  "area": "DE_Engineer",
+  "area": "BI_Engineer",
   "DB":"./interviews.db",
   "questions": [
     {
       "type": "Programming",
-      "q_level":{"Basic": 2,
-           "Intermediate": 3,
+      "q_level":{"Basic": 3,
+           "Intermediate": 2,
            "Advanced": 0}
     },
     {
