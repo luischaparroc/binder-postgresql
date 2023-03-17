@@ -9,5 +9,5 @@ dependencies:
   - postgresql
   - psycopg2
   - pgspecial
-  - ipython-sql
+  - ipython-sql==0.5.0
   - altair
