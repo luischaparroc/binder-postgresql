@@ -6,6 +6,7 @@ dependencies:
   - numpy
   - matplotlib
   - pandas
+  - sqlalchemy==1.4.46
   - postgresql
   - psycopg2
   - pgspecial
