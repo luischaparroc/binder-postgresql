@@ -12,3 +12,4 @@ dependencies:
   - altair
   - pip:
     - ipython-sql==0.4.1
+    - sqlalchemy==1.4.47
