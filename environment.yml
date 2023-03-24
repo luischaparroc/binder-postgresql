@@ -10,5 +10,5 @@ dependencies:
   - psycopg2
   - pgspecial
   - altair
-  pip:
-   - ipython-sql==0.4.1
+  - pip:
+    - ipython-sql==0.4.1
