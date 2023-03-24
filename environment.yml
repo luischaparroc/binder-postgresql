@@ -6,9 +6,8 @@ dependencies:
   - numpy
   - matplotlib
   - pandas
-  - sqlalchemy==1.4.46
   - postgresql
   - psycopg2
   - pgspecial
-  - ipython-sql
+  - ipython-sql==0.4.1
   - altair
