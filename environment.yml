@@ -6,6 +6,4 @@ dependencies:
   - numpy
   - matplotlib
   - pandas
-  - psycopg2
-  - pgspecial
   - altair
